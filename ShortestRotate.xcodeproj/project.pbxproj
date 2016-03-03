@@ -12,6 +12,7 @@
 		4F1396771C7850A10055FC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1396751C7850A10055FC3B /* Main.storyboard */; };
 		4F1396791C7850A10055FC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1396781C7850A10055FC3B /* Assets.xcassets */; };
 		4F13967C1C7850A10055FC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F13967A1C7850A10055FC3B /* LaunchScreen.storyboard */; };
+		4F5E220B1C79FEBD00A79145 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E220A1C79FEBD00A79145 /* Brain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4F1396781C7850A10055FC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F13967B1C7850A10055FC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F13967D1C7850A10055FC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F5E220A1C79FEBD00A79145 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4F1396711C7850A10055FC3B /* AppDelegate.swift */,
 				4F1396731C7850A10055FC3B /* ViewController.swift */,
+				4F5E220A1C79FEBD00A79145 /* Brain.swift */,
 				4F1396751C7850A10055FC3B /* Main.storyboard */,
 				4F1396781C7850A10055FC3B /* Assets.xcassets */,
 				4F13967A1C7850A10055FC3B /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1396741C7850A10055FC3B /* ViewController.swift in Sources */,
+				4F5E220B1C79FEBD00A79145 /* Brain.swift in Sources */,
 				4F1396721C7850A10055FC3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +289,7 @@
 				4F1396821C7850A10055FC3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

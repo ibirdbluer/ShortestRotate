@@ -22,18 +22,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
 
-
-    
+    var brain = Brain()
     // MARK: - Function
-    func r1(var array: [Int]) -> [Int]{
-        let tmp = array[0]
-        array[0] = array[3]
-        array[3] = array[4]
-        array[4] = array[1]
-        array[1] = tmp
-        return array
+    func r1(var array: [UILabel]){
+        array[0].center = array[0].center
+        array[3].center = array[3].center
+        array[4].center = array[4].center
+        array[1].center = array[1].center
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            let tmp = array[0].center
+            array[0].center = array[3].center
+            array[3].center = array[4].center
+            array[4].center = array[1].center
+            array[1].center = tmp
+            }, completion: nil)
+        
+        resultArray = brain.r1(resultArray)
+
     }
-    func r2(var array: [Int]) -> [Int] {
+    func r2(var array: [UILabel]) -> [UILabel] {
         let tmp = array[1]
         array[1] = array[4]
         array[4] = array[5]
@@ -41,7 +48,7 @@ class ViewController: UIViewController {
         array[2] = tmp
         return array
     }
-    func r3(var array: [Int]) -> [Int] {
+    func r3(var array: [UILabel]) -> [UILabel] {
         let tmp = array[3]
         array[3] = array[6]
         array[6] = array[7]
@@ -49,7 +56,7 @@ class ViewController: UIViewController {
         array[4] = tmp
         return array
     }
-    func r4(var array: [Int]) -> [Int] {
+    func r4(var array: [UILabel]) -> [UILabel] {
         let tmp = array[4]
         array[4] = array[7]
         array[7] = array[8]
@@ -58,7 +65,7 @@ class ViewController: UIViewController {
         return array
     }
     
-    func R1(var array: [Int]) -> [Int] {
+    func R1(var array: [UILabel]) -> [UILabel] {
         let tmp = array[0]
         array[0] = array[1]
         array[1] = array[4]
@@ -66,7 +73,7 @@ class ViewController: UIViewController {
         array[3] = tmp
         return array
     }
-    func R2(var array: [Int]) -> [Int] {
+    func R2(var array: [UILabel]) -> [UILabel] {
         let tmp = array[1]
         array[1] = array[2]
         array[2] = array[5]
@@ -74,7 +81,7 @@ class ViewController: UIViewController {
         array[4] = tmp
         return array
     }
-    func R3(var array: [Int]) -> [Int] {
+    func R3(var array: [UILabel]) -> [UILabel] {
         let tmp = array[3]
         array[3] = array[4]
         array[4] = array[7]
@@ -82,7 +89,7 @@ class ViewController: UIViewController {
         array[6] = tmp
         return array
     }
-    func R4(var array: [Int]) -> [Int] {
+    func R4(var array: [UILabel]) -> [UILabel] {
         let tmp = array[4]
         array[4] = array[5]
         array[5] = array[8]
@@ -103,28 +110,36 @@ class ViewController: UIViewController {
         
         switch sender.tag {
         case 0:
-            resultArray = self.r1(resultArray)
+            self.r1(resultLabelArray)
+//            resultArray = self.r1(resultLabelArray)
             facePlayer.text?.appendContentsOf("r1 ")
         case 1:
-            resultArray = self.r2(resultArray)
+            resultLabelArray = self.r2(resultLabelArray)
+//            resultArray = self.r2(resultArray)
             facePlayer.text?.appendContentsOf("r2 ")
         case 2:
-            resultArray = self.r3(resultArray)
+            resultLabelArray = self.r3(resultLabelArray)
+//            resultArray = self.r3(resultArray)
             facePlayer.text?.appendContentsOf("r3 ")
         case 3:
-            resultArray = self.r4(resultArray)
+            resultLabelArray = self.r4(resultLabelArray)
+//            resultArray = self.r4(resultArray)
             facePlayer.text?.appendContentsOf("r4 ")
         case 4:
-            resultArray = self.R1(resultArray)
+            resultLabelArray = self.R1(resultLabelArray)
+//            resultArray = self.R1(resultArray)
             facePlayer.text?.appendContentsOf("R1 ")
         case 5:
-            resultArray = self.R2(resultArray)
+            resultLabelArray = self.R2(resultLabelArray)
+//            resultArray = self.R2(resultArray)
             facePlayer.text?.appendContentsOf("R2 ")
         case 6:
-            resultArray = self.R3(resultArray)
+            resultLabelArray = self.R3(resultLabelArray)
+//            resultArray = self.R3(resultArray)
             facePlayer.text?.appendContentsOf("R3 ")
         case 7:
-            resultArray = self.R4(resultArray)
+            resultLabelArray = self.R4(resultLabelArray)
+//            resultArray = self.R4(resultArray)
             facePlayer.text?.appendContentsOf("R4 ")
         default:
             return
@@ -135,7 +150,7 @@ class ViewController: UIViewController {
     
     @IBAction func reset(sender: UIButton) {
         facePlayer.text = ""
-        resultArray = initArray
+        resultLabelArray = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
         self.reflashView()
     }
     
@@ -149,21 +164,21 @@ class ViewController: UIViewController {
         
         switch step {
         case 0:
-            resultArray = self.R1(resultArray)
+            resultLabelArray = self.R1(resultLabelArray)
         case 1:
-            resultArray = self.R2(resultArray)
+            resultLabelArray = self.R2(resultLabelArray)
         case 2:
-            resultArray = self.R3(resultArray)
+            resultLabelArray = self.R3(resultLabelArray)
         case 3:
-            resultArray = self.R4(resultArray)
+            resultLabelArray = self.R4(resultLabelArray)
         case 4:
-            resultArray = self.r1(resultArray)
+            self.r1(resultLabelArray)
         case 5:
-            resultArray = self.r2(resultArray)
+            resultLabelArray = self.r2(resultLabelArray)
         case 6:
-            resultArray = self.r3(resultArray)
+            resultLabelArray = self.r3(resultLabelArray)
         case 7:
-            resultArray = self.r4(resultArray)
+            resultLabelArray = self.r4(resultLabelArray)
         default:
             return
         }
@@ -173,10 +188,10 @@ class ViewController: UIViewController {
     }
     
     // Mark: - helper
-    var labelArray = [UILabel]()
+    var resultLabelArray = [UILabel]()
     func reflashView() {
         for i in 0...8 {
-            labelArray[i].text = String(resultArray[i])
+            resultLabelArray[i].text = String(resultArray[i])
         }
     }
     
@@ -185,8 +200,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        labelArray = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
+        resultLabelArray = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
+        for i in 0...8 {
+            print("tag: \(resultLabelArray[i].tag) center: \(resultLabelArray[i].center)")
+        }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
